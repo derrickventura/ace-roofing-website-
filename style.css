@@ -1,0 +1,1145 @@
+/* ============================================================
+   ACE ROOFING — style.css
+   ------------------------------------------------------------
+   TABLE OF CONTENTS
+   1.  Variables & Reset
+   2.  Base / Typography
+   3.  Buttons
+   4.  Navigation         ← logo image sizing here
+   5.  Hero               ← background photo set here
+   6.  Services           ← hover-reveal fix
+   7.  About              ← left-side photo set here
+   8.  Projects
+   9.  Why Us
+   10. CTA Band
+   11. Contact
+   12. Footer             ← footer logo image sizing here
+   13. Utility
+============================================================ */
+
+
+/* ── 1. VARIABLES & RESET ── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --acc: #1A6BE8;   /* blue  — buttons, icons, eyebrows      */
+  --grn: #1AAA5A;   /* green — logo, hero accent, stat nums  */
+  --dk:  #0D1B2A;   /* dark navy background                  */
+  --off: #F4F7F5;   /* off-white page background             */
+  --gy:  #6B7A8A;   /* blue-gray body text                   */
+  --ln:  #D6E2DC;   /* green-tinted borders & lines          */
+}
+
+
+/* ── 2. BASE / TYPOGRAPHY ── */
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off);
+  color: var(--dk);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+section { padding: 5rem 2.5rem; }
+
+.sec-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: .7rem;
+  letter-spacing: 3px;
+  color: var(--acc);
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+
+.sec-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+  color: var(--dk);
+}
+
+
+/* ── 3. BUTTONS ── */
+
+.btn-prim {
+  background: var(--acc);
+  color: #fff;
+  padding: .8rem 1.8rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background .18s;
+}
+.btn-prim:hover { background: #1558c0; }
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  padding: .78rem 1.8rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255,255,255,.25);
+  cursor: pointer;
+  transition: border-color .18s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,.7); }
+
+.btn-call {
+  background: var(--acc);
+  color: #fff;
+  padding: .5rem 1.3rem;
+  font-size: .82rem;
+  border: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background .18s;
+}
+.btn-call:hover { background: #1558c0; }
+
+.btn-wht {
+  background: #fff;
+  color: var(--acc);
+  padding: .75rem 2rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-wht:hover { background: #f0f0f0; }
+
+
+/* ── 4. NAVIGATION ── */
+
+nav {
+  background: var(--dk);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/*
+  Logo image in the nav.
+  The logo JPG has a white background, so we:
+    - keep it as-is (the dark nav makes it readable)
+    - limit its height so it fits in the nav bar
+  If you want to remove the white box look, ask about getting a PNG
+  version of the logo with a transparent background.
+*/
+.logo-link { display: flex; align-items: center; text-decoration: none; }
+.nav-logo-img {
+  height: 54px;        /* controls how tall the logo appears in the nav */
+  width: auto;         /* keeps the aspect ratio correct automatically   */
+  object-fit: contain;
+  /* No border-radius needed — PNG has a transparent background */
+}
+
+.nav-links {
+  display: flex;
+  gap: .1rem;
+  align-items: center;
+}
+.nav-links a {
+  color: #aaa;
+  text-decoration: none;
+  padding: .45rem .9rem;
+  font-size: .82rem;
+  letter-spacing: .5px;
+  transition: color .18s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a.act {
+  color: #fff;
+  border-bottom: 2px solid var(--grn);
+}
+
+
+/* ── 5. HERO ── */
+
+/*
+  background-image points to the real project photo.
+  The .hero-overlay div on top darkens it so the white text is readable.
+  If you want a different hero photo, just change the filename here.
+*/
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 2.5rem;
+  background-image: url('images/project-shingles-peak.jpg');
+  background-size: cover;
+  background-position: center top;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+/*
+  The overlay sits on top of the photo and darkens it.
+  Adjust the rgba alpha (last number, currently .72) to make it
+  lighter or darker — closer to 1 = darker, closer to 0 = more photo shows.
+*/
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 27, 42, 0.72);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(26,170,90,.15);
+  border: 1px solid rgba(26,170,90,.35);
+  padding: .3rem .8rem;
+  margin-bottom: 1.5rem;
+
+}
+.hero-tag span {
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grn);
+}
+.hero-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--grn);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .4; }
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: .95;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em {
+  color: var(--grn);
+  font-style: normal;
+  display: block;
+}
+
+.hero p {
+  color: rgba(255,255,255,.6);
+  font-size: .95rem;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero-stats {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+  gap: 2.5rem;
+  z-index: 1;
+}
+.stat { text-align: right; }
+.stat-n {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.stat-l {
+  font-size: .65rem;
+  color: rgba(255,255,255,.45);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: .2rem;
+}
+
+
+/* ── 6. SERVICES ── */
+
+#services {
+  background: #fff;
+  padding-bottom: 0;
+}
+
+.svc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*
+  Each service card is now a photo background card.
+  background-image is set inline in the HTML per card.
+  The .svc-overlay darkens the photo so white text is readable.
+  On hover: overlay gets lighter, revealing more photo.
+*/
+.svc-card {
+  position: relative;
+  aspect-ratio: 3/2;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: default;
+}
+
+.svc-overlay {
+  position: absolute;
+  inset: 0;
+  /* Dark overlay by default so text is clear */
+  background: rgba(13, 27, 42, 0.72);
+  transition: background .35s ease;
+}
+
+/* On hover: overlay lightens slightly, more photo shows through */
+.svc-card:hover .svc-overlay {
+  background: rgba(13, 27, 42, 0.45);
+}
+
+/*
+  Text content sits on top of the overlay.
+  Positioned at the bottom of the card.
+*/
+.svc-content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.svc-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: .5rem;
+}
+/* "+" icon — only shown on mobile as a hover hint */
+.svc-card::before {
+  content: '+';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: rgba(255,255,255,.6);
+  font-size: 1.5rem;
+  font-weight: 300;
+  z-index: 2;
+  transition: transform .3s ease, opacity .3s ease;
+  display: none; /* hidden on desktop */
+}
+
+/*
+  HOVER-REVEAL
+  .svc-short  = brief label, visible by default
+  .svc-detail = full description, hidden until hover
+*/
+.svc-short {
+  font-size: .78rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.5;
+  display: block;
+}
+.svc-detail {
+  font-size: .78rem;
+  color: rgba(255,255,255,.9);
+  line-height: 1.6;
+  display: none;
+}
+.svc-card:hover .svc-short  { display: none; }
+.svc-card:hover .svc-detail { display: block; }
+
+/* Green accent line at bottom on hover */
+.svc-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--grn);
+  transition: width .35s ease;
+  z-index: 2;
+}
+.svc-card:hover::after { width: 100%; }
+
+
+/* ── 7. ABOUT ── */
+
+#about {
+  background: var(--dk);
+  padding: 0;
+}
+
+/*
+  Three-column layout:
+    Column 1 (.about-photo)      = real photo, full height
+    Column 2 (.about-left-inner) = text + stats
+    Column 3 (.about-right-inner)= vision / mission / story
+*/
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 600px;
+}
+
+/*
+  Left photo column.
+  background-image = the tile repair photo — great composition,
+  worker on clay tiles against an open sky.
+  Change the filename here to swap to a different photo.
+*/
+.about-photo {
+  background-image: url('images/project-tile-repair.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+}
+
+/* The right two-thirds holds both text columns side by side */
+.about-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: span 2;
+}
+
+.about-left-inner {
+  padding: 5rem 2.5rem;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.about-right-inner { padding: 5rem 2.5rem; }
+
+#about .sec-eyebrow { color: var(--grn); }
+#about .sec-title   { color: #fff; }
+
+.about-body {
+  color: rgba(255,255,255,.5);
+  font-size: .9rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.astat {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 1rem;
+}
+.astat-n {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--grn);
+  line-height: 1;
+}
+.astat-l {
+  font-size: .7rem;
+  color: rgba(255,255,255,.35);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: .3rem;
+}
+
+.vm-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.vm-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.vm-block h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--acc);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: .7rem;
+}
+.vm-block p {
+  color: rgba(255,255,255,.5);
+  font-size: .88rem;
+  line-height: 1.75;
+}
+
+
+/* ── 8. PROJECTS ── */
+
+#projects { background: var(--off); }
+
+.proj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/*
+  6 photos in a 3-column grid.
+  To add more photos: copy a .proj-card in the HTML and change the src.
+  The grid will automatically wrap to a new row.
+*/
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.proj-card {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+  background: #b8c8c0;
+}
+
+/*
+  object-fit: cover makes the photo fill the card without stretching.
+  The image will crop rather than squish.
+  object-position lets you control what part of the photo stays in frame.
+  Default is "center" — change to "top" or "bottom" if heads get cropped.
+*/
+.proj-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .4s ease;
+}
+
+/* Subtle zoom on hover for a polished feel */
+.proj-card:hover img { transform: scale(1.04); }
+
+.proj-card-label {
+  background: var(--dk);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: .5rem .8rem;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 1;
+}
+
+/*
+  Hidden project cards — display:none by default.
+  script.js removes this class when "See More" is clicked,
+  and adds it back when "Show Less" is clicked.
+*/
+.proj-hidden { display: none; }
+
+/* Center the See More button below the grid */
+.proj-more {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 0 0;
+}
+
+
+/* ── 9. WHY US ── */
+
+#why { background: #fff; }
+
+.why-head {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1.5px solid var(--ln);
+}
+
+.why-card {
+  padding: 2.5rem 2rem;
+  border-right: 1.5px solid var(--ln);
+}
+.why-card:last-child { border-right: none; }
+
+.why-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ln);
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+
+.why-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--acc);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .8rem;
+}
+
+.why-card p {
+  font-size: .85rem;
+  color: var(--gy);
+  line-height: 1.75;
+}
+
+
+/* ── 10. CTA BAND ── */
+
+.cta-band {
+  background: var(--acc);
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.cta-band h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+.cta-band p {
+  color: rgba(255,255,255,.75);
+  font-size: .9rem;
+  margin-top: .3rem;
+}
+
+
+/* ── 11. CONTACT ── */
+
+#contact { padding: 0; }
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-left {
+  padding: 5rem 2.5rem;
+  border-right: 1.5px solid var(--ln);
+  background: var(--off);
+}
+.contact-right {
+  padding: 5rem 2.5rem;
+  background: #fff;
+}
+
+.contact-intro {
+  color: var(--gy);
+  font-size: .85rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.cform { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.cform-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.fg { display: flex; flex-direction: column; gap: .3rem; }
+
+.fg label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gy);
+}
+
+.fg input,
+.fg textarea {
+  border: none;
+  border-bottom: 1.5px solid var(--ln);
+  background: transparent;
+  padding: .5rem 0;
+  font-size: .9rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  color: var(--dk);
+  transition: border-color .2s;
+}
+.fg input:focus,
+.fg textarea:focus { border-bottom-color: var(--acc); }
+
+.fg textarea { min-height: 90px; resize: vertical; }
+
+.form-success {
+  font-size: .9rem;
+  color: var(--grn);
+  font-weight: 500;
+  padding: .75rem 0;
+}
+
+.contact-info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.ci-row { display: flex; gap: .8rem; align-items: flex-start; }
+
+.ci-text {
+  font-size: .85rem;
+  color: var(--gy);
+  line-height: 1.5;
+}
+.ci-text strong {
+  color: var(--dk);
+  display: block;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: .2rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+/* ── 12. FOOTER ── */
+
+footer {
+  background: var(--dk);
+  padding: 3rem 2.5rem;
+}
+
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+/*
+  Footer logo image — transparent PNG blends into the dark background.
+  To resize, just change the height value below.
+*/
+.foot-logo-img {
+  height: 72px;          /* larger now that there's no white box around it */
+  width: auto;
+  object-fit: contain;
+  margin-bottom: .5rem;
+  /* Transparent PNG blends cleanly into the dark footer background */
+}
+
+.foot-desc {
+  font-size: .8rem;
+  color: rgba(255,255,255,.35);
+  line-height: 1.7;
+  margin-top: .8rem;
+}
+
+.foot-col h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 1rem;
+}
+.foot-col a,
+.foot-col p {
+  font-size: .82rem;
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  display: block;
+  line-height: 2.2;
+  transition: color .18s;
+}
+.foot-col a:hover { color: var(--grn); }
+
+.foot-bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.foot-bottom p {
+  font-size: .75rem;
+  color: rgba(255,255,255,.25);
+}
+.foot-bottom a {
+  font-size: .75rem;
+  color: rgba(255,255,255,.3);
+  text-decoration: none;
+}
+.foot-bottom a:hover { color: var(--grn); }
+
+
+/* ── 13. UTILITY ── */
+
+html { scroll-behavior: smooth; }
+
+/* ============================================================
+   14. MOBILE RESPONSIVENESS
+   ------------------------------------------------------------
+   Media queries that kick in at different screen widths.
+   How it works: the browser reads ALL your CSS top to bottom.
+   When a screen matches a @media rule, those styles override
+   the ones above. So mobile styles always go at the bottom.
+
+   Breakpoints used:
+     768px  — tablets and large phones (landscape)
+     480px  — phones (portrait)
+============================================================ */
+
+
+/* ── TABLET & BELOW (768px) ── */
+@media (max-width: 768px) {
+.svc-card::before { display: block; }
+.svc-card:hover::before {
+  transform: rotate(45deg);
+  opacity: 0;
+}
+  /* Reduce section padding so content isn't too cramped */
+  section { padding: 3rem 1.5rem; }
+
+  /* ── NAV ──
+     Hamburger handles showing/hiding links now.
+     Just resize the nav bar and logo here.
+  */
+  nav { padding: 0 1.25rem; height: 60px; position: fixed; }
+  .nav-logo-img { height: 42px; }
+
+  /* ── HERO ── */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero {
+  flex-direction: column;
+}
+
+.hero-content {
+  width: 100%;
+}
+
+.hero-stats {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.15);
+  width: 100%;
+  right: auto;
+  bottom: auto;
+}
+
+.stat { text-align: left; }
+
+.hero {
+  min-height: auto;
+  padding-bottom: 2.5rem;
+}
+
+
+
+
+
+
+
+.hero-tag { font-size: .6rem; padding: .25rem .6rem; }
+.hero-tag span { letter-spacing: 1px; }
+.hero {
+  min-height: auto;
+  padding: 2rem 1.5rem 2.5rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+  .hero h1 { font-size: 3rem; }
+ .hero-stats {
+  position: static;
+  margin-top: 2rem;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding-top: 1.5rem;
+}
+  .stat { text-align: left; }
+
+  /* ── SERVICES ──
+     4 columns is too many on tablet — drop to 2
+  */
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* ── ABOUT ──
+     3-column layout collapses to single column stack
+  */
+  .about-inner { grid-template-columns: 1fr; }
+  .about-photo {
+    min-height: 280px;
+    grid-row: 1;
+  }
+  .about-text {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+  }
+  .about-left-inner { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .about-right-inner { padding: 3rem 1.5rem; }
+
+  /* ── PROJECTS ──
+     3 columns → 2 columns on tablet
+  */
+  .proj-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* ── WHY US ──
+     3 columns → 1 column stacked
+  */
+  .why-grid { grid-template-columns: 1fr; }
+  .why-card { border-right: none; border-bottom: 1.5px solid var(--ln); }
+  .why-card:last-child { border-bottom: none; }
+
+  /* ── CTA BAND ── */
+  .cta-band { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.5rem; }
+
+  /* ── CONTACT ──
+     Side by side → stacked
+  */
+  .contact-inner { grid-template-columns: 1fr; }
+  .contact-left { border-right: none; border-bottom: 1.5px solid var(--ln); }
+
+  /* ── FOOTER ──
+     4 columns → 2 columns
+  */
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+
+/* ── PHONE (480px) ── */
+@media (max-width: 480px) {
+
+  section { padding: 2.5rem 1.25rem; }
+
+  /* ── HERO ── */
+  .hero { padding: 1.5rem 1.25rem; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero-btns { flex-direction: column; }
+  .btn-prim, .btn-ghost { width: 100%; text-align: center; }
+  .hero-stats { gap: 1.2rem; flex-wrap: wrap; }
+
+  /* ── SERVICES ──
+     2 columns → 1 column on small phones
+  */
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-card { aspect-ratio: 16/9; }
+
+  /* ── PROJECTS ──
+     2 columns → 1 column
+  */
+  .proj-grid { grid-template-columns: 1fr; }
+
+  /* ── CONTACT FORM ──
+     Side by side fields → stacked
+  */
+  .cform-row { grid-template-columns: 1fr; }
+
+  /* ── FOOTER ──
+     2 columns → 1 column
+  */
+  .foot-grid { grid-template-columns: 1fr; }
+  .foot-bottom { flex-direction: column; gap: .75rem; text-align: center; }
+}
+
+
+/* ── HAMBURGER MENU ── */
+
+/*
+  The hamburger button — 3 stacked lines.
+  Hidden on desktop, shown on mobile via the media query below.
+*/
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all .3s ease;
+}
+
+/*
+  When the menu is open (.open class added by JS),
+  animate the 3 lines into an X shape.
+*/
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+
+  /* Show the hamburger button on mobile */
+  .hamburger { display: flex; }
+
+  /*
+    The nav links panel — hidden off-screen by default on mobile.
+    When .open is added by JS, it slides down into view.
+  */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--dk);
+    padding: 1rem 1.5rem 1.5rem;
+    gap: .25rem;
+    z-index: 150;
+
+    /* Hidden by default — slides up and fades out */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  /* When open — slides into view */
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  /* Each link takes full width on mobile */
+  .nav-links a {
+    display: block;
+    padding: .75rem 0;
+    font-size: .95rem;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    color: #ccc;
+  }
+  .nav-links a:last-of-type { border-bottom: none; }
+  .nav-links a.act { color: #fff; border-bottom: 1px solid rgba(255,255,255,.06); }
+
+  /* Call Now button at the bottom of the mobile menu */
+  .btn-call {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: .75rem;
+    padding: .75rem;
+    font-size: .95rem;
+    text-decoration: none;
+  }
+}
+.contact-centered {
+  text-align: center;
+  padding: 5rem 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn-ghost-dk {
+  background: transparent;
+  color: var(--dk);
+  padding: .8rem 1.8rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1.5px solid var(--dk);
+  cursor: pointer;
+  transition: all .18s;
+  display: inline-block;
+}
+.btn-ghost-dk:hover {
+  background: var(--dk);
+  color: #fff;
+}
+/* Mobile tap state — mirrors hover behavior */
+.svc-card.active .svc-overlay { background: rgba(13,27,42,.45); }
+.svc-card.active .svc-short   { display: none; }
+.svc-card.active .svc-detail  { display: block; }
+.svc-card.active::after        { width: 100%; }
+.svc-card.active::before {
+  transform: rotate(45deg);
+  opacity: 0;
+}

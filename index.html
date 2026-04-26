@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ACE Roofing and Construction LLC | Salisbury, NC</title>
+  <meta name="description" content="ACE Roofing and Construction LLC — Professional roofing services in Salisbury, NC. New installations, repairs, inspections, metal roofing, and more. Call 980-305-4226."/>
+<meta name="keywords" content="roofing Salisbury NC, roof repair Salisbury, metal roofing NC, roofing contractor Salisbury, ACE Roofing"/>
+<meta name="author" content="ACE Roofing and Construction LLC"/>
+
+<!-- This tells Google your business location -->
+<meta name="geo.region" content="US-NC"/>
+<meta name="geo.placename" content="Salisbury, North Carolina"/>
+  <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<!--
+  Logo is now a real image. Sized with .nav-logo-img in style.css.
+  The white logo background blends into the dark nav via object-fit.
+-->
+<nav>
+  <a href="#" class="logo-link">
+    <img src="images/logo.png" alt="ACE Roofing and Construction LLC" class="nav-logo-img"/>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="#" class="act">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:9803054226" class="btn-call">Call Now</a>
+ </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<!--
+  Background photo = images/project-shingles-peak.jpg
+  The dramatic shot of the worker standing on the shingle peak.
+  Set via background-image in style.css on .hero
+-->
+<div class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><span>Salisbury, NC — Licensed &amp; Insured</span></div>
+    <h1>Roofing<br>Solutions<em>You Can Trust</em></h1>
+    <p>Dedicated to excellence since 2020. Quality materials, competitive pricing, and the owner on every job.</p>
+    <div class="hero-btns">
+      <button class="btn-prim" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Our Projects</button>
+      <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n">43+</div><div class="stat-l">Projects Done</div></div>
+    <div class="stat"><div class="stat-n">4</div><div class="stat-l">Partners</div></div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<!--
+ 
+  Photo assignments:
+    New Installation     → project-metal-mountain.jpg  (wide metal roof, mountains)
+    Repair & Replacement → project-skylight-repair.jpg (worker fixing roof)
+    Inspection           → project-shingle-complete.jpg (clean finished shingle roof)
+    Emergency            → project-flat-crew.jpg        (crew working urgently)
+    Gutter Services      → project-barn-frame.jpg       (structural framing)
+    Consulting           → project-metal-panel.jpg      (detail work close-up)
+    Coating & Waterproof → project-tpo-seam.jpg         (TPO membrane seaming)
+    Ventilation          → project-tpo-large.jpg        (large flat roof, open sky)
+-->
+<section id="services">
+  <div class="svc-header">
+    <div>
+      <div class="sec-eyebrow">Our Services</div>
+      <h2 class="sec-title">Everything Your<br>Roof Needs</h2>
+    </div>
+  </div>
+  <div class="svc-grid">
+
+    <div class="svc-card" style="background-image: url('images/project-metal-mountain.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>New Roof Installation</h3>
+        <p class="svc-short">Residential &amp; commercial installs.</p>
+        <p class="svc-detail">Full new roof installs for homes and commercial buildings using premium-grade shingles, metal, and flat roofing systems. We handle everything from tear-off to final inspection.</p>
+      </div>
+    </div>
+
+    <div class="svc-card" style="background-image: url('images/project-skylight-repair.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>Repair &amp; Replacement</h3>
+        <p class="svc-short">Fast, lasting repairs.</p>
+        <p class="svc-detail">From missing shingles to full roof replacements, we diagnose the issue and fix it right the first time. Most repairs are completed the same day.</p>
+      </div>
+    </div>
+
+    <div class="svc-card" style="background-image: url('images/project-shingle-complete.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>Inspection &amp; Maintenance</h3>
+        <p class="svc-short">Catch problems early.</p>
+        <p class="svc-detail">Regular inspections that identify damage, weak spots, and wear before they turn into expensive repairs. Ideal before buying a home or after a major storm.</p>
+      </div>
+    </div>
+
+    <div class="svc-card" style="background-image: url('images/project-flat-crew.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>Emergency Services</h3>
+        <p class="svc-short">Rapid storm &amp; leak response.</p>
+        <p class="svc-detail">When a storm hits or a leak can't wait, we respond fast. We provide emergency tarping, temporary seals, and priority scheduling for urgent repairs.</p>
+      </div>
+    </div>
+
+    <div class="svc-card" style="background-image: url('images/project-barn-frame.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>Gutter Services</h3>
+        <p class="svc-short">Installation &amp; repair.</p>
+        <p class="svc-detail">Properly installed gutters protect your foundation, siding, and landscaping. We install, repair, and clean gutters to keep water flowing away from your property.</p>
+      </div>
+    </div>
+
+    <div class="svc-card" style="background-image: url('images/project-metal-panel.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>Inspections &amp; Consulting</h3>
+        <p class="svc-short">Expert roofing advice.</p>
+        <p class="svc-detail">Not sure what your roof needs? We provide honest, professional consultations with no pressure. Get a clear picture of your roof's condition and your options.</p>
+      </div>
+    </div>
+
+    <div class="svc-card" style="background-image: url('images/project-tpo-seam.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>Coating &amp; Waterproofing</h3>
+        <p class="svc-short">Extend your roof's life.</p>
+        <p class="svc-detail">Reflective coatings and waterproof membranes that add years of protection to flat and low-slope roofs. A cost-effective alternative to full replacement.</p>
+      </div>
+    </div>
+
+    <div class="svc-card" style="background-image: url('images/project-tpo-large.jpg')">
+      <div class="svc-overlay"></div>
+      <div class="svc-content">
+        <h3>Ventilation Installation</h3>
+        <p class="svc-short">Airflow that saves money.</p>
+        <p class="svc-detail">Poor ventilation causes heat buildup, moisture damage, and higher energy bills. We install ridge vents, soffit vents, and attic fans to keep your roof breathing right.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── CTA BAND ── -->
+<div class="cta-band">
+  <div>
+    <h2>Ready to get started?</h2>
+    <p>Give us a call — we're available 7 days a week.</p>
+  </div>
+  <button class="btn-wht" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote</button>
+</div>
+
+
+
+<!-- ── ABOUT ── -->
+<!--
+  Left column = real photo (project-tile-repair.jpg)
+  set as background-image in CSS on .about-photo
+  Right column = text split into two panels (stats + vision/mission)
+-->
+<section id="about">
+  <div class="about-inner">
+
+    <!-- This div gets its photo from CSS: background-image on .about-photo -->
+    <div class="about-photo"></div>
+
+    <div class="about-text">
+      <div class="about-left-inner">
+        <div class="sec-eyebrow">Who We Are</div>
+        <h2 class="sec-title">About ACE Roofing</h2>
+        <p class="about-body">ACE Roofing and Construction LLC was founded by Dennis Ventura, driven by a passion for excellence and a vision to showcase the quality workmanship of his family. With a focus on top-quality materials, on-time delivery, and competitive pricing — ACE has become a trusted name in the region.</p>
+        <div class="about-stats">
+          <div class="astat"><div class="astat-n">2020</div><div class="astat-l">Founded</div></div>
+          <div class="astat"><div class="astat-n">43+</div><div class="astat-l">Jobs Completed</div></div>
+          <div class="astat"><div class="astat-n">4</div><div class="astat-l">Business Partners</div></div>
+        </div>
+      </div>
+      <div class="about-right-inner">
+        <div class="vm-block">
+          <h3>Vision</h3>
+          <p>To be the leading roofing company in the region, recognized for exceptional craftsmanship, reliability, and customer satisfaction.</p>
+        </div>
+        <div class="vm-block">
+          <h3>Mission</h3>
+          <p>To deliver high-quality roofing services with integrity, professionalism, and a commitment to safety — exceeding customer expectations through continuous improvement.</p>
+        </div>
+        <div class="vm-block">
+          <h3>Our Story</h3>
+          <p>Dennis Ventura learned roofing from his father and uncle, honing techniques across years of family work. He founded ACE Roofing in 2020 to bring that same quality craftsmanship to residential and commercial clients throughout the Carolinas.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<!--
+  First 6 cards always visible.
+  Cards with class "proj-hidden" are hidden by default via CSS.
+  script.js toggles them when the button is clicked.
+-->
+<section id="projects">
+  <div class="proj-header">
+    <div>
+      <div class="sec-eyebrow">Our Work</div>
+      <h2 class="sec-title">Featured Projects</h2>
+    </div>
+  </div>
+  <div class="proj-grid" id="proj-grid">
+
+    <!-- Always visible — first 6 -->
+    <div class="proj-card">
+      <img src="images/project-flat-commercial.jpg" alt="Commercial flat TPO roof"/>
+      <div class="proj-card-label">Commercial — Flat TPO Roof</div>
+    </div>
+
+    <div class="proj-card">
+      <img src="images/project-metal-barn.jpg" alt="Red metal roof barn install"/>
+      <div class="proj-card-label">Agricultural — Metal Roof</div>
+    </div>
+
+    <div class="proj-card">
+      <img src="images/project-church-steeple.jpg" alt="Church steeple roofing"/>
+      <div class="proj-card-label">Commercial — Church Steeple</div>
+    </div>
+
+    <div class="proj-card">
+      <img src="images/project-metal-mountain.jpg" alt="Large metal roof with mountain view"/>
+      <div class="proj-card-label">Commercial — Standing Seam Metal</div>
+    </div>
+
+    <div class="proj-card">
+      <img src="images/project-shingles-peak.jpg" alt="Worker on shingle roof peak"/>
+      <div class="proj-card-label">Residential — Shingle Install</div>
+    </div>
+
+    <div class="proj-card">
+      <img src="images/project-new-build.jpg" alt="New construction roof install"/>
+      <div class="proj-card-label">Residential — New Construction</div>
+    </div>
+
+    <!-- Hidden until "See More" is clicked -->
+    <div class="proj-card proj-hidden">
+      <img src="images/project-tpo-large.jpg" alt="Large commercial TPO roof"/>
+      <div class="proj-card-label">Commercial — TPO Flat Roof</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-blue-barrier.jpg" alt="Apartment complex roof replacement"/>
+      <div class="proj-card-label">Multi-Family — Full Replacement</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-tpo-seam.jpg" alt="TPO membrane seaming"/>
+      <div class="proj-card-label">Commercial — TPO Seam Work</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-epdm-rollout.jpg" alt="EPDM rubber roof installation"/>
+      <div class="proj-card-label">Commercial — EPDM Rollout</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-barn-frame.jpg" alt="Full roof tear-off and framing"/>
+      <div class="proj-card-label">Residential — Full Tear-Off</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-shingles-staged.jpg" alt="Shingles staged on roof deck"/>
+      <div class="proj-card-label">Residential — Shingles Staged</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-tear-off.jpg" alt="Shingle tear-off in progress"/>
+      <div class="proj-card-label">Residential — Tear-Off &amp; Rebuild</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-shingle-complete.jpg" alt="Completed shingle roof"/>
+      <div class="proj-card-label">Residential — Completed Shingle</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-skylight-repair.jpg" alt="Skylight repair on dark shingle roof"/>
+      <div class="proj-card-label">Residential — Skylight Repair</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-metal-panel.jpg" alt="Metal panel roof install"/>
+      <div class="proj-card-label">Residential — Metal Panel</div>
+    </div>
+
+    <div class="proj-card proj-hidden">
+      <img src="images/project-flat-crew.jpg" alt="Flat roof crew working"/>
+      <div class="proj-card-label">Commercial — Flat Roof Crew</div>
+    </div>
+
+  </div>
+
+  <!-- Toggled by script.js — text switches between See More / Show Less -->
+  <div class="proj-more">
+    <button id="proj-toggle" class="btn-prim">See More Projects ↓</button>
+  </div>
+
+</section>
+
+
+
+<!-- ── WHY US ── -->
+<section id="why">
+  <div class="why-head">
+    <div class="sec-eyebrow" style="text-align:center">Why Choose Us</div>
+    <h2 class="sec-title" style="text-align:center">What Sets Us Apart</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <h3>Quality Work</h3>
+      <p>We use only premium-grade materials and never rush a job. Every project gets the same attention to detail — whether it's a patch repair or a full commercial install.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <h3>Owner Onsite</h3>
+      <p>Dennis Ventura personally oversees every project. When the owner is on the roof, you know the work gets done right — no shortcuts, no surprises.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <h3>Affordable Pricing</h3>
+      <p>Top-tier roofing shouldn't cost a fortune. We offer highly competitive pricing and transparent quotes so you always know exactly what you're paying for.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-centered">
+    <div class="sec-eyebrow" style="text-align:center">Contact Us</div>
+    <h2 class="sec-title" style="text-align:center">Have a question<br>or need a quote?</h2>
+    <p class="contact-intro" style="text-align:center;max-width:480px;margin:0 auto 2rem">We're available 7 days a week. The fastest way to reach us is by phone — we're always happy to help.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="tel:9803054226" class="btn-prim" style="text-decoration:none">Call 980-305-4226</a>
+      <a href="https://www.instagram.com/aceroofingco_llc/" target="_blank" class="btn-ghost-dk" style="text-decoration:none">Instagram</a>
+    </div>
+    <div class="contact-info" style="justify-content:center;flex-direction:row;gap:3rem;margin-top:3rem;flex-wrap:wrap">
+      <div class="ci-text"><strong>Phone</strong>980-305-4226</div>
+      <div class="ci-text"><strong>Socials</strong><a href="https://www.instagram.com/aceroofingco_llc/" target="_blank">Instagram</a></div>
+    </div>
+  </div>
+</section>
+<!-- ── FOOTER ── -->
+<!--
+  Footer logo = same logo image, smaller size via .foot-logo-img in CSS.
+  The white background on the logo jpg shows against the dark footer,
+  so we add a slight background blend to handle that in style.css.
+-->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <img src="images/logo.png" alt="ACE Roofing and Construction LLC" class="foot-logo-img"/>
+      <p class="foot-desc">Quality roofing and construction solutions for residential and commercial properties across the Carolinas. Dedicated to excellence since 2020.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Phone Number</h4>
+
+      <p style="margin-top:.5rem">980-305-4226</p>
+     
+    </div>
+    <div class="foot-col">
+      <h4>Socials</h4>
+      <a href="https://www.instagram.com/aceroofingco_llc/" target="_blank">Instagram</a>
+    </div>
+    <div class="foot-col">
+      <h4>Quick Links</h4>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2024 ACE Roofing and Construction LLC. All rights reserved.</p>
+    <a href="#">Go Up ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
