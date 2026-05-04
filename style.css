@@ -194,7 +194,7 @@ nav {
   display: flex;
   align-items: flex-end;
   padding: 4rem 2.5rem;
-  background-image: url('images/project-shingles-peak.jpg');
+  background-image: url('images/project-shingles-peak.webp');
   background-size: cover;
   background-position: center top;
   overflow: hidden;
@@ -442,7 +442,7 @@ nav {
   Change the filename here to swap to a different photo.
 */
 .about-photo {
-  background-image: url('images/project-tile-repair.jpg');
+  background-image: url('images/project-tile-repair.webp');
   background-size: cover;
   background-position: center;
   min-height: 500px;
